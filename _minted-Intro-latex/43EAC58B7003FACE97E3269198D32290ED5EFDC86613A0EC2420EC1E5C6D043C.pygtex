@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}knitrout\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}definecolor}\PYG{n+nb}{\PYGZob{}}shadecolor\PYG{n+nb}{\PYGZcb{}\PYGZob{}}rgb\PYG{n+nb}{\PYGZcb{}\PYGZob{}}0.969, 0.969, 0.969\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}color}\PYG{n+nb}{\PYGZob{}}fgcolor\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}kframe\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}verbatim\PYG{n+nb}{\PYGZcb{}}
+\PYGZsh{}\PYGZsh{} \PYGZlt{}\PYGZlt{}\PYGZgt{}\PYGZgt{}=
+\PYGZsh{}\PYGZsh{} \PYGZsh{}une commande R
+\PYGZsh{}\PYGZsh{} @
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}verbatim\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}kframe\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}knitrout\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

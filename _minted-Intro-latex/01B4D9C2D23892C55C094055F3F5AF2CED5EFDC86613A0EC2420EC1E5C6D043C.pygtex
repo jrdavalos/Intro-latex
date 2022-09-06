@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZsh{} \PYGZlt{}\PYGZlt{}\PYGZgt{}\PYGZgt{}=
+data \PYGZlt{}\PYGZhy{} data.frame(choix = sample(c(\PYGZdq{}fraise\PYGZdq{}, \PYGZdq{}mangue\PYGZdq{}, \PYGZdq{}orange\PYGZdq{}, \PYGZdq{}cerise\PYGZdq{}),
+                                  300, replace = T,
+                                  prob = c(0.5, 0.2, 0.2, 0.1))                                ,
+                   aime\PYG{n+nb}{\PYGZus{}}kiwi = sample(c(\PYGZdq{}oui\PYGZdq{}, \PYGZdq{}non\PYGZdq{}),
+                                      300, replace = T, prob = c(0.2, 0.8)),
+                   aime\PYG{n+nb}{\PYGZus{}}melon = sample(c(\PYGZdq{}oui\PYGZdq{}, \PYGZdq{}non\PYGZdq{}),
+                                       300, replace = T, prob = c(0.5, 0.5)),
+                   aime\PYG{n+nb}{\PYGZus{}}ananas =  sample(c(\PYGZdq{}oui\PYGZdq{}, \PYGZdq{}non\PYGZdq{}),
+                                         300, replace = T, prob = c(0.7, 0.3)))
+@
+\end{Verbatim}

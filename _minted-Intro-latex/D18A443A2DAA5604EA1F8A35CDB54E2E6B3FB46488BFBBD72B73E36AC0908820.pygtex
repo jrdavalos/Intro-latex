@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[!h] \PYG{c}{\PYGZpc{} permet de forcer la position \PYGZdq{}here\PYGZdq{}}
+	\PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}Une image prise au hasard\PYG{n+nb}{\PYGZcb{}} \PYG{c}{\PYGZpc{} titre, bien placé dans un flottant}
+	\PYG{k}{\PYGZbs{}centering} \PYG{c}{\PYGZpc{} on centre}
+	\PYG{k}{\PYGZbs{}includegraphics}\PYG{n+na}{[scale=0.4]}\PYG{n+nb}{\PYGZob{}}Images/bourdieu.jpg\PYG{n+nb}{\PYGZcb{}} \PYG{c}{\PYGZpc{} insertion d\PYGZsq{}une image}
+	\PYG{c}{\PYGZpc{} taille = 40\PYGZpc{} de la largeur d\PYGZsq{}un paragraphe, on met le chemin de l\PYGZsq{}image}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

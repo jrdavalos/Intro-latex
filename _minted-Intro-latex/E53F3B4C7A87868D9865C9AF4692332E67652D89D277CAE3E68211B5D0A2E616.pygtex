@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} \PYGZlt{}\PYGZlt{}result=\PYGZdq{}asis\PYGZdq{}\PYGZgt{}\PYGZgt{}=}
+\PYG{c+c1}{\PYGZsh{} result=\PYGZdq{}asis\PYGZdq{} permet de dire à Sweave que le Chunk va contenir du texte}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{kableExtra}\PYG{p}{)}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{tidyverse}\PYG{p}{)}
+\PYG{n+nf}{freq}\PYG{p}{(}\PYG{n}{data}\PYG{o}{\PYGZdl{}}\PYG{n}{choix}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+ \PYG{n+nf}{kable}\PYG{p}{(}\PYG{n}{format} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}latex\PYGZdq{}}\PYG{p}{)}
+\PYG{o}{@}
+\end{Verbatim}
