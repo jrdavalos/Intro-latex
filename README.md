@@ -11,3 +11,5 @@ Pour le cas pratique par contre, le PDF n'a aucun sens tout seul.
 La vidéo de la présentation paraîtra bientôt, je mettrai le lien ici.
 
 Je mettrai à jour le manuel au fur et à mesure de mes avancements et de ce que je trouve pertinent d'ajouter, sachant que l'idée est que ce soit une introduction et non un cours complet.
+
+Par ailleurs, pour les fonctions de tableau dans R, je pense me consacrer à une amélioration de stargazer concernant les modèles polytomiques (il y a quelques soucis) donc si ça vous intéresse, vous pouvez scruter mon autre repo avec un package R multifonction : https://github.com/jrdavalos/qessmasteR.git
