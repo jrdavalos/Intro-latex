@@ -1,0 +1,217 @@
+\documentclass[a4paper, 10pt]{article}
+% package accents
+\usepackage[utf8]{inputenc}% input en utf8
+\usepackage[french]{babel}% typo française
+\usepackage[T1]{fontenc}% accents out en format T1
+\usepackage{csquotes}% typo française (guillemets)
+
+% packages maths (les plus courants)
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathabx}
+\usepackage{cases}
+
+\usepackage{enumerate} % listes
+
+% biblio
+\usepackage[bibstyle=verbose, citestyle=verbose-trad1, backend=biber, isbn=false, url=false, doi=false]{biblatex}
+\bibliography{Biblio.bib}
+\DeclareNameAlias{sortname}{family-given} % nom de famille en premier
+
+% mise en forme des paragraphes
+\usepackage{parskip}% saut de lignes en fin de paragraphe
+\let\EndItemize\enditemize
+\def\enditemize{\EndItemize\bigskip}% sauts de ligne en fin d'environnement itemize
+
+% tables et figures
+\usepackage{multirow} % permet de fusionner les colonnes
+\usepackage{graphicx} % admet les figures
+\usepackage{array} % types particuliers de tableaux
+\usepackage{tabularx} % autres tableaux, notamment pour gérer les doubles traits de séparation (voir hhline)
+\usepackage[hang,small]{caption} % mise en forme du caption
+
+
+% mise en page
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, menucolor=black]{hyperref} % liens hypertextes
+\usepackage[bottom]{footmisc} % mise en forme des notes de bas de page "\footnote"
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % marges
+\setcounter{tocdepth}{2}
+
+% page de garde/titre (en fonction de la classe de document)
+\usepackage{titling} % pour le titre en gras
+\author{\href{mailto:julioricardo.davalos@ehess.fr}{Julio Ricardo Davalos}}
+\title{Petite introduction à \LaTeX{} en Sciences Sociales}
+\date{Septembre 2022}
+
+% pour tableaux stargazer et kable
+\usepackage{dcolumn}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{xstring}
+\usepackage{array} 
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% macros
+\newcommand{\etoiles}{%
+	\begin{center}
+    $\ast$\\ $\ast$~\hspace*{2mm}~$\ast$\\
+  \end{center}
+}
+
+%-------------------------------Options pour Sweave--------------------------------
+<<include=FALSE>>=
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE, 
+                      concordance = TRUE, 
+                      trace = FALSE, 
+                      cache = TRUE,
+                      fig.path='Sorties/Graph')
+@
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section*{Section non numérotée}\addcontentsline{toc}{section}{Section non numérotée}
+\subsection*{Sous-section non numérotée}
+Ce document a pour but d'introduire à l'utilisation du langage \LaTeX{} à un public venant des SHS. En effet, ce langage est assez commun dans les sciences expérimentales mais reste inconnu (ou alors connu que de nom) pour beaucoup de chercheurs et étudiants en SHS. Cela peut être dû à son côté austère ou encore au fait qu'il peut paraître destiné uniquement à mettre en forme des mathématiques, capacité que l'on peut considérer comme secondaire voire superflue dans notre cas.
+
+\section{Section numérotée}
+\subsection{Sous-section numérotée}
+
+
+\begin{figure}[!ht]
+	\caption{Une image choisie complètement au hasard}\label{bourdieu}
+	\centering
+	\includegraphics[scale=0.4]{Images/bourdieu.jpg}
+\end{figure}
+Je cite la figure \ref{bourdieu}
+
+  \begin{table}[!ht]
+    \caption{Un tableau vide et centré}
+    \centering
+    \begin{tabular}{|l|c|}
+    \hline
+    Case $(1,1)$ oudfhodfhdfvgsdf sdf & Case $(1,2)$ \\
+    \hline
+     Case $(2,1)$ & Case $(2,2)$ \\
+    \hline
+    \end{tabular}
+  \end{table}
+  
+ \begin{figure}[!ht]
+  \begin{tabular}{cc}
+    \includegraphics[width=0.5\textwidth]{Images/latex_word.png} & \includegraphics[width=0.5\textwidth]{Images/latex_word.png} \\
+    \end{tabular}
+ \end{figure}
+
+\begin{itemize}
+  \item point 1
+  \item[$\Rightarrow$] point 2
+\end{itemize}
+
+\begin{enumerate}[(a)]% avec le package enumerate
+  \item point 1
+  \item point 2
+\end{enumerate}
+
+\textbackslash\\
+\textasciitilde
+
+\textasciicircum
+
+\enquote{guillemets, \enquote{autres guillemets}}
+
+\textit{italique}
+\emph{italique, \emph{pas italique}}
+
+\textbf{gras}
+
+
+
+\cite{Rouquette2011}\footcite{Rouquette2011}
+\nocite{Rouquette2011}
+\nocite{*}
+
+\section{Sweave}
+<<>>=
+print("une commande R")
+@
+
+
+<<>>=
+data <- data.frame(choix = sample(c("fraise", "mangue", "orange", "cerise"),
+                                  1000, replace = T,
+                                  prob = c(0.5, 0.2, 0.2, 0.1)),
+                   aime_kiwi = sample(c("Oui", "Non"),
+                                      1000, replace = T, prob = c(0.2, 0.8)),
+                   aime_melon = sample(c("Oui", "Non"),
+                                       1000, replace = T, prob = c(0.5, 0.5)),
+                   aime_ananas =  sample(c("Oui", "Non"),
+                                         1000, replace = T, prob = c(0.7, 0.3)))
+@
+
+<<>>=
+library(questionr)
+freq(data$choix)
+@
+
+
+<<>>=
+library(kableExtra)
+library(tidyverse)
+freq(data$choix) %>%
+ kable(format = "latex", # sinon c'est en html
+       caption = "Fréquence des choix",
+       label = "freqchoix",
+       booktabs = TRUE) %>%  # permet d'avoir des tableaux plus jolis, necessite le package booktabs dans le preambule
+    kable_styling(latex_options = c("hold_position"), # cree un float et lui donne l'argument 'h'
+                  position = "center") # centre le tableau
+@
+
+
+<<results="asis">>=
+library(glm2)
+data <- data %>%
+ mutate(choix_fraise = case_when(choix == "fraise" ~ "Oui", TRUE ~ "Non") %>%
+         as.factor(),
+        choix_cerise = case_when(choix == "cerise" ~ "Oui", TRUE ~ "Non") %>%
+         as.factor(),
+        age = sample.int(100, 1000, replace = T),
+        nb_fruits = (aime_kiwi == "Oui") + (aime_melon == "Oui") +
+         (aime_ananas == "Oui") + abs(rnorm(1000, mean = log(age))))
+# j'ai ajouté un bruit aléatoire en fonction de l'âge exprès
+
+m1 <- glm(choix_fraise ~ age + aime_kiwi + aime_melon + aime_ananas,
+          family = binomial, data = data)
+m2 <- glm(choix_cerise ~ age + aime_kiwi + aime_melon + aime_ananas,
+          family = binomial, data = data)
+m3 <- lm(nb_fruits ~ age + aime_kiwi + aime_melon + aime_ananas, data = data)
+
+library(stargazer)
+stargazer(m1,m2, m3, title = "Trois beaux modèles")
+@
+
+
+<<fig.cap="Nombre de fruits estimés en fonction de l'âge", fig.width=7, fig.height=3, fig.env="figure", fig.lp="nbfruits_age",fig.pos="ht!">>=
+
+library(ggplot2)
+data %>%
+ ggplot(aes(x = age, y = nb_fruits)) +
+ geom_point() +
+ stat_summary(fun.data = mean_cl_normal) +
+ geom_smooth(method='lm')
+@
+
+\newpage
+\printbibliography
+\end{document}
+<<setup, eval= TRUE, include= FALSE, cache= FALSE, echo= FALSE>>=
+# system (paste ("biber", sub ("\\.Rnw$", "", current_input())))
+@

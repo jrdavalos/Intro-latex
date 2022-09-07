@@ -1,0 +1,14 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Les principes de base de \LaTeX }{5}{0}{1}
+\beamer@subsectionintoc {1}{1}{Installation}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{Fonctionnement de la compilation}{6}{0}{1}
+\beamer@subsectionintoc {1}{3}{Notions principales}{7}{0}{1}
+\beamer@sectionintoc {2}{Construction d'un document \LaTeX }{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Choix courants dans le préambule}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Environnements et packages usuels}{10}{0}{2}
+\beamer@subsectionintoc {2}{3}{Corps du texte}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{Bibliographie}{10}{0}{2}
+\beamer@sectionintoc {3}{Mise en forme de résultats statistiques avec \LaTeX }{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Logique de RSweave}{10}{0}{3}
+\beamer@subsectionintoc {3}{2}{Exemples de tableaux}{10}{0}{3}
+\beamer@subsectionintoc {3}{3}{Exemple de figure}{10}{0}{3}

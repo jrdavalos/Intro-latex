@@ -1,0 +1,318 @@
+\documentclass[8pt]{beamer}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}%pour que latex comprenne les accents
+\usepackage[T1]{fontenc}%pour que latex imprime les accents
+\usepackage{multicol}%pour créer plusieurs colonnes
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+\usetheme{CambridgeUS}%thème que l'on peut changer si l'on veut
+\usepackage{pdfpages}
+%
+
+\title{\textbf{Insoumis: les nouvelles modalités du militantisme de gauche}}
+\author{Davalos Julio Ricardo}
+\institute{Master 2 Quantifier en Sciences Sociales -- ENS-EHESS}
+\makeatletter
+\setbeamercolor{autre}{fg = black, bg = white}
+\setbeamercolor{title}{fg = red, bg = white}
+
+
+\setbeamertemplate{title page}%pour changer la mise en forme de la page de titre
+{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center, rounded = true, shadow = true]{title}%titre
+      \Huge\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,]{autre}%le reste
+        \Large\insertauthor\\
+        \large\insertinstitute\\
+        \large\insertdate
+    \end{beamercolorbox}%\vskip0.5em
+  \end{centering}
+ % \begin{figure}%l'image
+  %    \centering
+   %   \includegraphics[width=0.8\textwidth]{Images/tintin.png}
+%  \end{figure}
+}
+\begin{document}
+<<include=FALSE>>=
+library(here)
+library(tidyverse)
+library(magrittr)
+library(readr)
+library(sjlabelled)
+library(qessmasteR)
+library(questionr)
+library(glue)
+
+library(FactoMineR)
+library(explor)
+library(ggplot2)
+library(ggrepel)
+library(RColorBrewer)
+tab_agd <- function(agd, data, sortie = "res") {
+  type <- class(agd)
+  if(class(agd)[1] %>% str_detect("MCA")) {
+    variances.acm <- as.data.frame(agd$eig) %>%
+      rownames_to_column() %>% # récupérer les noms de lignes (dim 1, dim 2, etc) dans une colonne distincte
+      slice(1:nrow(agd$eig)) %>% # tout conserver
+      mutate(Axes = str_replace_all(rowname, "dim", "Axe")) %>% # créer une nouvelle variable à partir de rowname, qui prend les valeurs "Axe 1, Axe 2, etc" au lieu de "dim 1, dim 2, etc."
+      select(-rowname) %>%# on enlève cette colonne dont on n'a plus besoin
+      rename(`Valeurs propres` = eigenvalue) %>%
+      rename(`% de variance` = `percentage of variance`) %>% # on renomme les autres colonnes
+      rename(`% cumulé de variance` = `cumulative percentage of variance`) %>% 
+      mutate(Axes = fct_relevel(Axes, paste("Axe", 1:nrow(agd$eig))))
+    
+    # variables actives
+    frequences.acm <- pivot_longer(data, everything(),names_to = "variables", values_to = "modalites") %>% 
+      count(variables,modalites) %>% 
+      group_by(variables) %>% 
+      mutate(pourcentage = round(100 * n / nrow(data), 1)) %>% 
+      ungroup() %>% 
+      select(variables,modalites,n,pourcentage)
+    
+    coordonnees.acm <- as.data.frame(round(agd$var$coord, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "coord", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    contributions.acm <- as.data.frame(round(agd$var$contrib, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "contrib", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    contributions.acm <- as.data.frame(round(agd$var$contrib, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "contrib", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    cos2.acm <- as.data.frame(round(agd$var$cos2, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "cos2", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    vtest.acm <- as.data.frame(round(agd$var$v.test, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "vtest", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    resultats_actives.acm <- frequences.acm %>% 
+      right_join(coordonnees.acm) %>% 
+      right_join(contributions.acm) %>% 
+      right_join(cos2.acm) %>% 
+      right_join(vtest.acm) %>% 
+      mutate(type = "Active")
+    
+    # variables supp
+    coordonnees_sup.acm <- as.data.frame(round(agd$quali.sup$coord, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "coord", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    cos2_sup.acm <- as.data.frame(round(agd$quali.sup$cos2, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "cos2", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    vtest_sup.acm <- as.data.frame(round(agd$quali.sup$v.test, 2)) %>% 
+      rename_all(tolower) %>% 
+      rename_all(~ str_replace(.," ","")) %>% 
+      rename_all(~ str_c(., "vtest", sep = "_")) %>%
+      mutate(modalites = rownames(.))
+    
+    resultats_sup.acm <- frequences.acm %>% 
+      right_join(coordonnees_sup.acm) %>% 
+      right_join(cos2_sup.acm) %>% 
+      right_join(vtest_sup.acm) %>% 
+      mutate(type = "Supplémentaire")
+    
+    resultats_complet.acm <- bind_rows(resultats_actives.acm, resultats_sup.acm)
+  }
+  
+  if(sortie == "res") {return(resultats_complet.acm)}
+  if(sortie == "var") {return(variances.acm)}
+}
+
+@
+
+<<warning=FALSE,echo=FALSE, include=FALSE>>=
+
+quest <- read_csv(here("Donnees","quest_LFI2_test.csv"))
+questions <- read_csv(here("Doc","Dictionnaire_test.csv"), 
+                      col_types = cols(questions = col_character()))
+
+quest <- set_label(quest, 
+                   label = questions$questions)
+
+quest %$% table(age,retraite) # age de la retraite important : 63 ans
+quest %$% table(age,pcs == "Étudiant-e") # age des étudiants important : 24 ans
+
+# icut
+
+quest %<>% mutate(agecat = cut(quest$age, include.lowest = FALSE, right = FALSE,
+                               dig.lab = 4, breaks = c(16, 25, 35, 45, 55, 63, 70, 86)),
+                  anneelfi = ifelse(anneelfi == 1975, NA_integer_, anneelfi))
+
+attr(quest$agecat,"label") <- "Catégorie d'âge"
+
+doublons <- questions %>% 
+  filter(type == "c") %>% 
+  group_by(X) %>% 
+  tally %>% 
+  merge(questions %>% 
+          filter(type == "c") %>% 
+          group_by(variables,X), by = "X") %>% 
+  filter(X != "", n > 1) %>% 
+  select(variables) %>% 
+  unlist %>% 
+  as.character
+
+doublons <- doublons[-c(8,25)] # on enlève la pcs et le dipl
+
+quest_acm <- quest
+for (i in doublons) {
+  quest_acm[i] <- ifelse(is.na(quest_acm[i]),NA_character_,
+                         paste(i, unlist(quest_acm[i]), sep = ":"))
+}
+
+
+
+data_acm1 <- quest_acm %>% 
+  filter(lastpage > 5) %>% 
+  select(genre,dipl:etabens_sup,pcs,agecat, pcs_pere:dipl_conj, ville,parti_pere:asso_conj,
+         connaitelu,actmili_actprincipale:actmili_plussatis,amis_lfi:amis_abseng,
+         typemilitant,
+         engageparti:engageasso,responsparti,responssynd,
+         eluavant,freqreu:redac_atelierloi,groupefb,conventionfi,amfis,
+         freqmanif,campagnelfi,covid_resoc:covid_manif,don, -pcs_par2,-dipl_par2) %>% 
+  mutate_if(is.character,as.factor)
+
+# acm_pratiques <- MCA(data_acm1, graph = FALSE, quali.sup = 1:34)
+
+# nb <- missMDA::estim_ncpMCA(data_acm1) # erreur > 4 ou > 199
+
+dfcompleted <- missMDA::imputeMCA(data_acm1, ncp = 4, quali.sup = 1:34)
+acm_pratiques <- MCA(data_acm1, tab.disj = dfcompleted$tab.disj,  
+                     graph = FALSE, quali.sup = 1:34)
+acm_pratiques <- MCA(data_acm1, tab.disj = dfcompleted$tab.disj,  
+                     graph = FALSE, quali.sup = 1:34,
+                     excl = c("redac_articlepartisynd:Non concerné-e",
+                              "redac_tractparti:Non concerné-e",
+                              "responsparti:Non concerné-e","responssynd:Non concerné-e",
+                              "actmili_actprincipale:Non concerné-e",
+                              "actmili_plusrespons:Non concerné-e",
+                              "actmili_plussatis:Non concerné-e","actmili_plusutile:Non concerné-e"))
+
+res.ACM <- tab_agd(acm_pratiques,data_acm1)
+var.ACM <- tab_agd(acm_pratiques,data_acm1, "var")
+
+@
+
+	\begin{frame}
+    \titlepage
+	\end{frame}
+	
+	\begin{frame}
+	  \begin{block}{Mémoire}
+	    \begin{itemize}
+	      \item \textbf{Question de recherche}: le militantisme de la France insoumise propose-t-il un renouveau dans la restructuration actuelle de la gauche?
+	      \item \textbf{Direction}: Quentin Ravelli
+	      \item \textbf{Question à laquelle répond l'analyse suivante}: comment se répartit le temps militant entre groupe insoumis, syndicat, parti et associatif ?
+	    \end{itemize}
+	  \end{block}
+	  \begin{alertblock}{Données}
+	    \begin{itemize}
+	    \item Questionnaire auto-administré sur les pratiques militantes
+	    \only<1>{\item[$\rightarrow$] $N = 604$, gardé pour cette analyse
+	    \item[$\rightarrow$] questions concernant les pratiques concrètes et leur fréquence: tractage, réunions, manifestations etc.}
+	    \item Scraping de données, pour avoir une idée (imparfaite) de la représentativité de l'échantillon (analyse non détaillée ici)
+	    \end{itemize}
+	  \end{alertblock}
+	  \begin{exampleblock}{Méthodologie}
+	    \begin{itemize}
+	      \item Analyse des correspondances multiples
+	      \item Variables actives
+	       \only<2>{\begin{itemize}
+            \item Participation aux évènements (décidé au niveau national) de la FI (Amfis, campagnes, convention, don)
+            \item Engagement dans le groupe insoumis (fréquence des réunions, participation à celles-ci)
+            \item Engagement dans d'autres organisations (partis, syndicats, associations et si responsabilités ou si élu)
+            \item Fréquence de pratiques liées à ces engagements (tractage, rédactions réunions etc.)
+            \item Participation aux actions pendant la pandémie (collectes, manifestations, aide dans les quartiers populaires, sur internet)
+	       \end{itemize}}
+	        \item Variables supplémentaires
+	        \only<3>{\begin{itemize}
+	          \item socio-démo
+	          \item PCS/diplôme des parents
+	          \item engagement des parents
+	          \item ce que l'enquêté considère être au sein de la FI (cadre, sympathisant etc.)
+	        \end{itemize}}
+	    \end{itemize}
+	  \end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+<<echo=FALSE, fig.width=6, warning=F, fig.height=4, cache=T>>=
+
+# mutate(modalites = ifelse(str_detect(modalites, ":"), sub(".*:", "", modalites), modalites))
+
+
+
+#####
+
+supp <- c("amis_lfi","connaitelu","agecat","actmili_actprincipale")
+seuil = 2
+act <- res.ACM$variables[res.ACM$type == "Active" &
+                           (res.ACM$dim1_contrib > seuil |
+                              res.ACM$dim2_contrib > seuil)]
+
+res.ACM  %>% 
+  filter(dim1_contrib > seuil | dim2_contrib > seuil |
+           variables %in% supp) %>% # on part du tableau de résultat des modalités actives et on filtre uniquement celles dont la contribution dépasse le seuil pour l'un ou l'autre des deux axes (| est l'opérateur logique OU).
+  
+  ggplot(aes(x = dim1_coord, y = dim2_coord, # initialisation du graphique
+             label = modalites, # les labels des points sont les modalités
+             shape = type,
+             colour = variables,
+             alpha = dim1_cos2 + dim2_cos2,
+             size = n)) + # les formes des points dépendent des variables : à chaque variable son symbole
+  
+  coord_fixed() + # pour que les échelles des axes soient identiques
+  scale_colour_manual(values = c(setNames(colorRampPalette(brewer.pal(12, "Paired"))(length(act)),act),
+                                 setNames(rep("black",length(supp)), supp))) +
+  
+  geom_point() + # tracer les points
+  geom_label_repel(size = 1.5, segment.alpha = 0.3, label.size = NA, label.padding	= 0, 
+                   alpha = 1) +
+  
+  geom_hline(yintercept = 0, colour = "darkgrey", linetype="longdash") + # ligne horizontale y = 0
+  geom_vline(xintercept = 0, colour = "darkgrey", linetype="longdash") + # ligne verticale x = 0
+  
+  xlab(paste0("Axe 1 (", round(var.ACM[1, 2], 1), " %)")) + 
+  ylab(paste0("Axe 2 (", round(var.ACM[2, 2], 1), " %)")) + # idem pour l'axe vertical
+  
+  guides(colour = FALSE, shape = FALSE, size = FALSE, alpha = FALSE) +
+  
+  theme_minimal() +
+  theme(text = element_text(family = "Times")) +
+  
+  geom_line(data = res.ACM[res.ACM$variables == "agecat",], orientation = "y",
+            mapping = aes(x = dim1_coord, y = dim2_coord),lwd = .5)
+@
+  \end{frame}
+
+\end{document}

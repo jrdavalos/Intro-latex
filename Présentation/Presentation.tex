@@ -1,0 +1,251 @@
+\documentclass[9pt]{beamer}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}%pour que latex comprenne les accents
+\usepackage[T1]{fontenc}%pour que latex imprime les accents
+\usepackage{multicol}%pour créer plusieurs colonnes
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usetheme{CambridgeUS}%thème que l'on peut changer si l'on veut
+\AtBeginSection[]{%pour mettre le plan au début de chaque section
+	\begin{frame}{Table des matières}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\title{\textbf{Mads Meier Jaeger \&  Richard Breen,\\ \og A Dynamic Model of Cultural Reproduction \fg{}}}
+\author{Chaima Souli \& Julio Ricardo Davalos}
+\institute{Master Quantifier en Sciences Sociales -- ENS/EHESS}
+\date{Année 2020-2021}
+\makeatletter
+\setbeamercolor{autre}{fg = black, bg = white}
+\setbeamercolor{title}{fg = red, bg = white}
+
+
+\setbeamertemplate{title page}%pour changer la mise en forme de la page de titre
+{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center, rounded = true, shadow = true]{title}%titre
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,]{autre}%le reste
+        \usebeamerfont{author}\insertauthor\\
+        \usebeamerfont{institute}\insertinstitute\\
+        \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}%\vskip0.5em
+  \end{centering}
+}
+
+\begin{document}
+	\begin{frame}
+    \titlepage
+	\end{frame}
+	
+\section*{Introduction}
+\begin{frame}{Introduction}
+    \begin{block}{Contexte}
+        \begin{itemize}
+            \item grand nombre de recherches sur la reproduction sociale à la suite de Bourdieu et Passeron
+            \item[$\to$] pas de théorie vraiment unifiée mais tout converge vers un effet positif du capital culturel sur la réussite scolaire
+            \item d'après les auteurs, manque de clarté dans les concepts bourdieusien
+            \item[$\to$] en particulier sur le processus de transmission et de conversion du capital culturel ainsi que de la motivation qu'ont les parents à le faire
+            \item pas/peu de modèles mathématiques sur la question
+        \end{itemize}
+    \end{block}
+    \begin{alertblock}{Problématique}
+	Comment compléter les zones d'ombre de la théorie bourdieusienne de la reproduction sociale ?
+    \end{alertblock}
+\end{frame}
+
+\section*{Table des matières}
+\begin{frame}{Table des matières}
+	\tableofcontents[hideallsubsections]%pour l'annonce du plan
+\end{frame}
+
+\section{Modèles théoriques}
+\subsection{Cadre d'analyse}
+\begin{frame}{Cadre d'analyse}
+	\begin{block}{Les auteurs filent la métaphore économique de Bourdieu concernant le capital culturel}
+		\begin{itemize}
+		\item[$\to$] on parle donc d'\og investissement \fg{} concernant la transmission
+		\item[$\to$] les professeurs font des \og inputs \fg{} supplémentaires
+		\end{itemize}
+	\end{block}
+	\begin{block}{Pour expliquer le choix d'investissement des parents: théorie du choix rationnel}
+		\begin{itemize}
+		\item[$\to$] les parents ajustent leur investissement de manière rationnelle
+		\item[$\to$] ils maximisent une fonction d'utilité que l'on détaillera plus tard
+		\item[$\to$] pour les auteurs cela permet d'approfondir et de dépasser le manque de clarté de la théorie bourdieusienne
+		\end{itemize}
+	\end{block}
+\end{frame}
+\subsection{Modèle statique}
+\begin{frame}
+	\begin{block}{Causalité entre capital culturel et position socio-économique}
+		\begin{align}		
+			\begin{dcases}
+			Y_c=\rho_1E_c+\rho_2X_p+\rho_3A_c+Q_c\\
+			E_c=\eta_1P_c + \eta_2X_p + \eta_3A_c+U_c \\
+			P_c=\sigma_1C_c + \sigma_2A_c + J_c\\
+			C_c=\beta_1\theta_p + \beta_2S_p + \beta_3X_p + \beta_4A_c + L_c
+			\end{dcases}
+		\end{align}
+		\begin{itemize}
+		\item $Y_c$ la position socio-économique de l'enfant une fois adulte;
+		\item $X_p$ le capital social et économique des parents;
+ 		\item $A_c$ l'aptitude académique de l'enfant;
+ 		\item $E_c$ le niveau d'éducation final;
+ 		\item $P_c$ la performance scolaire;
+ 		\item $C_c$ le capital culturel de l'enfant;
+ 		\item $\theta_p$le capital culturel des parents investi dans l'éducation de l'enfant volontairement;
+ 		\item $S_p$ le stock total de capital culturel des parents;
+ 		\item $Q_c$, $U_c$, $J_c$ et $L_c$ la chance que peut avoir l'enfant à chaque étape.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Modèle dynamique}
+\begin{frame}
+	\begin{block}{Causalité entre capital culturel et performance scolaire en prenant le temps en compte}
+		\begin{align}
+		\begin{dcases}
+		P_{ct}=\alpha_1T_t+\alpha_2A_c+\alpha_3X_{pt}+W_{ct}\\
+		T_t = \phi_1P_{ct-1}+\phi_2C_{ct}+V_{ct}\\
+		C_{ct}=\gamma_1C_{ct-1}+\gamma_2\theta_{pt}+\gamma_3S_p+\gamma_4X_{pt}+\gamma_5A_c+L_{ct}
+		\end{dcases}
+		\end{align}
+		\begin{itemize}
+		 \item $P_{ct}$ la performance scolaire à un moment $t$;
+		 \item $T_t$ l'enseignement des professeurs en $t$
+		\item $X_{pt}$ le capital social et économique des parents en $t$;
+ 		\item $A_c$ l'aptitude académique de l'enfant;
+		\item $C_{ct}$ le capital culturel de l'enfant en $t$;
+ 		\item $\theta_{pt}$ le capital culturel des parents investi dans l'éducation d l'enfant volontairement;
+ 		\item $S_p$ le stock total de capital culturel des parents qui est investi involontairement;
+ 		\item $W_{ct}$, $V_{ct}$ et $L_{ct}$ la chance.\\
+		\end{itemize}
+		
+		\begin{equation}
+		\Rightarrow P_{ct} = m_0P_{ct-1}+m_1C_{ct-1}+m_2\theta_{pt}+m_3S_p+m_4A_c+m_5X_{pt}+\epsilon_{ct}
+		\end{equation}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\begin{alertblock}{Les parents sont considérés comme des maximisateurs}
+	Ils maximisent:
+		\begin{equation*}
+		\mu P_{ct}-c(\theta_{pt})
+		\end{equation*}
+	C'est-à-dire les bénéfices d'un investissement dans leur enfant pondéré par leur altruisme et leur croyance dans l'effet d'une haute performance scolaire ($\mu$) auquel on soustrait le coût de l'investissement.
+	\end{alertblock}
+	\begin{block}{Hypothèses}
+		\begin{itemize}
+		\item les parents maximisent la fonction sous la contrainte de ce qu'ils pensent être les valeurs des $m_i$
+		\item $\frac{\partial c(\theta_{pt})}{\partial\theta_{pt}}> 0$ (des investissements élevés sont plus coûteux que des investissements faibles)
+		\item $\frac{\partial c(\theta_{pt})}{\partial S_{p}}< 0$ (plus le stock est grand, moins l'investissement est couteux relativement)
+		\end{itemize}
+	\end{block}
+	\begin{block}{Résultats théoriques}
+	\begin{equation*}
+	\theta^*_{pt}=\frac{\mu \hat{m_2}_t}{h},\quad \text{avec}\quad \hat{m_2}_t=\hat{m_2}_{t-1}\left[1+\pi\left(\frac{P_{ct-1}-P_{ct-2}}{\theta_{t-1}-\theta_{t-2}}\right)\right],
+	\end{equation*}
+	$h$ le coût relatif de l'investissement et $\pi$ la sensibilité des parents aux résultats de leurs investissements
+	\end{block}
+\end{frame}
+
+\section{Administration de la preuve}
+\subsection{Données}
+\begin{frame}{Données}
+	\begin{block}{Panel utilisé}
+		\begin{itemize}
+		\item National Longitudinal Survey of Youth 1979 - Children and young adults
+		\item[$\to$] données de panel bi-annuelles entre 1986 et 2010
+		\item[$\to$] données sur des résultats scolaires et mesures de capital culturel de la mère et des enfants
+		\item on ne prend que les enfants entre 10 et 14 ans
+		\end{itemize}
+	\end{block}
+	\begin{block}{Variables utilisées}
+		\begin{itemize}
+		\item Capital culturel de l'enfant: indicateur de comportement de lecture entre 0 et 1;
+		\item Capital culturel de la mère: investissement volontaire (entre 0 et 1) et involontaire (entre 0 et 1);
+		\item Performance scolaire: test de lecture et test PIAT de mathématiques;
+		\item Contrôles: échelles socio-économiques et démographiques.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Stratégie analytique}
+\begin{frame}{Stratégie analytique}
+	\begin{block}{Modèles dynamiques à tester}
+	Pour l'évolution du capital culturel:
+		\begin{equation}
+		C_{i,t}=\tilde{\gamma}_1C_{i,t-1}+\tilde{\gamma}_2\theta_{i,t}+\tilde{\gamma}_3S_{i,t}+\tilde{\gamma}_4X_{i,t}+T+u_i+e_{1i,t}\label{C}
+		\end{equation}
+	Pour les résultats scolaires:
+		\begin{equation}
+		P_{i,t} = \tilde{m}_0P_{i,t-1}+\tilde{m}_1C_{i,t-1}+\tilde{m}_2\theta_{i,t}+\tilde{m}_3S_{i,t}+\tilde{m}_5X_{i,t}+T+u_i+e_{2i,t}\label{P}
+		\end{equation}
+	Pour l'investissement volontaire des parents:
+		\begin{equation}
+		\theta_{i,t}= \tilde{\tau}_1\theta_{i,t-1}+\tilde{\tau}_2\theta_{i,t-2}+\tilde{\tau}_3P_{i,t-1}+\tilde{\tau}_4(\theta_{i,t-2}\times P_{i,t-1})+\tilde{\tau}_5S_{i,t}+\tilde{\tau}_6X_{i,t}+T+u_i+e_{3i,t}\label{theta}
+		\end{equation}
+	\end{block}
+	\begin{alertblock}{Remarques}
+		\begin{itemize}
+		\item les $u_i$ sont des effets fixes par individu, ils comprennent donc les $A_c$;
+		\item les $T$ sont des effets fixes par année, on est donc dans des modèles \textit{within twoways};
+		\item \eqref{theta} est un modèle simplifié du choix rationnel des parents vu plus haut
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+\subsection{Résultats}
+\begin{frame}
+	\begin{figure}[h]
+		\begin{center}
+		\includegraphics[width=\textwidth]{Tab1.png}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}[h]
+		\begin{center}
+		\includegraphics[width=\textwidth]{Tab2.png}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+\section*{Conclusion}
+\begin{frame}{Conclusion}
+	\begin{block}{Apports de l'article}
+		\begin{itemize}
+		\item Formalisation de la théorie bourdieusienne
+		\item Les enfants accumulent bien du capital culturel transmis par les parents, ce qui a un impact positif sur leur scolarité
+		\item Les parents ajustent leurs \og investissements \fg{} en fonction des résultats
+		\end{itemize}
+	\end{block}
+	\begin{block}{Limites données par les auteurs}
+		\begin{itemize}
+		\item Les modèles font comme s'il n'y avait qu'un seul enfant;
+		\item Les modèles ne prennent pas en compte l'hétérogénéité des \og retours sur investissement \fg{} possibles (par exemple en fonction de la classe sociale)
+		\end{itemize}
+	\end{block}
+	\begin{alertblock}{Critiques}
+		\begin{itemize}
+		\item Assez peu de détails sur les variables de contrôle;
+		\item Le capital culturel de l'enfant n'a qu'une dimension: la lecture $\to$ effet quasi mécanique de l'achat de livres par la famille;
+		\item L'effet d'ajustement de l'investissement est significatif mais minuscule ($0,004$ dans les deux cas)
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+\end{document}

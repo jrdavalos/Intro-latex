@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+
+\PYG{l+s+se}{\PYGZbs{}s}ubsection\PYG{o}{\PYGZob{}}Notion de compilation\PYG{o}{\PYGZcb{}}
+	\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}frame\PYG{o}{\PYGZcb{}\PYGZob{}}Compilation\PYG{o}{\PYGZcb{}}
+	\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}figure\PYG{o}{\PYGZcb{}[}h!\PYG{o}{]}
+  \PYG{l+s+se}{\PYGZbs{}c}aption\PYG{o}{\PYGZob{}}Schéma explicatif de la compilation\PYG{o}{\PYGZcb{}}
+  \PYG{l+s+se}{\PYGZbs{}l}abel\PYG{o}{\PYGZob{}}compilation\PYG{o}{\PYGZcb{}}
+  \PYG{l+s+se}{\PYGZbs{}c}entering
+  \PYG{l+s+se}{\PYGZbs{}i}ncludegraphics\PYG{o}{[}\PYG{n+nv}{scale}\PYG{o}{=}\PYG{l+m}{0}.6\PYG{o}{]\PYGZob{}}Images/compilation.png\PYG{o}{\PYGZcb{}}
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}figure\PYG{o}{\PYGZcb{}}
+	\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}frame\PYG{o}{\PYGZcb{}}
+
+\PYG{l+s+se}{\PYGZbs{}s}ubsection\PYG{o}{\PYGZob{}}Notions principales\PYG{o}{\PYGZcb{}}
+\PYG{l+s+se}{\PYGZbs{}s}ubsubsection\PYG{o}{\PYGZob{}}Packages\PYG{o}{\PYGZcb{}}
+Si vous êtes familiers avec R, la notion de package ne vous est pas étrangère. Dans le langage \PYG{l+s+se}{\PYGZbs{}L}aTeX\PYG{o}{\PYGZob{}\PYGZcb{}}, on a la même logique: chaque fonction est définie dans un package que l\PYG{l+s+s1}{\PYGZsq{}on se doit d\PYGZsq{}}appeler avant d\PYG{l+s+s1}{\PYGZsq{}appeler la fonction. En effet, cela demanderait bien trop de mémoire de charger l\PYGZsq{}}ensemble des fonctions existantes dans la documentation. Cependant, d\PYG{l+s+s1}{\PYGZsq{}expérience, la documentation et les ressources sur les forums sont bien plus nombreux, détaillés et accessibles! Ce qu\PYGZsq{}}il est important de noter donc, c\PYG{l+s+s1}{\PYGZsq{}est que si vous voulez réaliser quelque chose alors quelqu\PYGZsq{}}un l\PYG{l+s+s1}{\PYGZsq{}aura très probablement fait avant vous et il vous suffira de charger le package et donc les fonctions désirées. Dans le pire des cas, vous créerez une macro à partir d\PYGZsq{}}une fonction existante.
+
+\PYG{l+s+se}{\PYGZbs{}s}ubsubsection\PYG{o}{\PYGZob{}}Préambule\PYG{o}{\PYGZcb{}}
+Contrairement à R  où l\PYG{l+s+s1}{\PYGZsq{}on fait ce qu\PYGZsq{}}on veut, on appelle les packages dans le préambule du fichier \PYG{l+s+se}{\PYGZbs{}t}exttt\PYG{o}{\PYGZob{}}.tex\PYG{o}{\PYGZcb{}}, c\PYG{l+s+s1}{\PYGZsq{}est\PYGZhy{}à\PYGZhy{}dire à l\PYGZsq{}}extérieur de notre environnement de texte \PYGZhy{}\PYGZhy{} on y reviendra. On aura ainsi comme modèle de fichier \PYG{l+s+se}{\PYGZbs{}t}exttt\PYG{o}{\PYGZob{}}.tex\PYG{o}{\PYGZcb{}} par défaut, un code impérativement délimité comme suit:
+\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}minted\PYG{o}{\PYGZcb{}[}\PYG{n+nv}{bgcolor}\PYG{o}{=}bg\PYG{o}{]\PYGZob{}}tex\PYG{o}{\PYGZcb{}}
+\PYGZpc{} Les commentaires sont indiques par un pourcentage
+\PYGZpc{} On se trouve ici dans le preambule
+\PYG{l+s+se}{\PYGZbs{}d}ocumentclass\PYG{o}{\PYGZob{}}article\PYG{o}{\PYGZcb{}} \PYGZpc{} la classe de document est obligatoire, elle permet à LaTeX de charger des styles par defaut. Ici j\PYG{l+s+s1}{\PYGZsq{}ai choisi article mais cela peut etre report, memoir, book, letter, ou bien d\PYGZsq{}}autres
+\PYGZpc{} On peut aussi creer sa propre classe
+
+\PYG{l+s+se}{\PYGZbs{}u}sepackage\PYG{o}{\PYGZob{}}package1\PYG{o}{\PYGZcb{}} \PYGZpc{} J\PYG{l+s+s1}{\PYGZsq{}appelle ici package1, on verra plus tard lesquels peuvent nous être utiles}
+
+\PYG{l+s+s1}{\PYGZbs{}begin\PYGZob{}document\PYGZcb{}}
+\PYG{l+s+s1}{\PYGZpc{} Ici on ne se trouve plus dans le preambule. L\PYGZsq{}}ensemble de ce qui apparait dans le PDF se trouve la.
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}document\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

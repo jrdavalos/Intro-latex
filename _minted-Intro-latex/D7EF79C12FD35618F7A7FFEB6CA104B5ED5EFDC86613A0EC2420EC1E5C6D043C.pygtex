@@ -1,6 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
-\PYGZsh{} \PYGZlt{}\PYGZlt{}setup, eval= TRUE, include= FALSE, cache= FALSE, echo= FALSE\PYGZgt{}\PYGZgt{}=
-\PYGZsh{} system (paste (\PYGZdq{}biber\PYGZdq{}, sub (\PYGZdq{}\PYG{k}{\PYGZbs{}\PYGZbs{}}.Rnw\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZdq{}, \PYGZdq{}\PYGZdq{}, current\PYGZus{}input}\PYG{o}{())))}
-\PYG{n+nb}{@}
-\end{Verbatim}
