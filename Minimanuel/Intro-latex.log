@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.25)  7 SEP 2022 13:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.25)  7 SEP 2022 17:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1041,6 +1041,7 @@ File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 4018.
 Package hyperref Info: Hyper figures OFF on input line 4137.
 Package hyperref Info: Link nesting OFF on input line 4142.
 Package hyperref Info: Hyper index ON on input line 4145.
@@ -1066,7 +1067,7 @@ Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
 Package hyperref Info: backreferencing OFF on input line 6042.
-Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring ON on input line 6045.
 Package hyperref Info: Link coloring with OCG OFF on input line 6052.
 Package hyperref Info: PDF/A mode OFF on input line 6057.
 LaTeX Info: Redefining \ref on input line 6097.
@@ -1186,24 +1187,24 @@ Package csquotes Info: Redefining alias 'default' -> 'french'.
  (./Intro-latex.aux)
 \openout1 = `Intro-latex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
  (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count478
@@ -1226,8 +1227,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 123.
-LaTeX Info: Redefining \up on input line 123.
+LaTeX Info: Redefining \degres on input line 124.
+LaTeX Info: Redefining \up on input line 124.
 Package biblatex Info: Trying to load language 'french'...
 Package biblatex Info: ... file 'french.lbx' found.
 
@@ -1243,8 +1244,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Intro-latex.bbl' found.
 
 (./Intro-latex.bbl)
-Package biblatex Info: Reference section=0 on input line 123.
-Package biblatex Info: Reference segment=0 on input line 123.
+Package biblatex Info: Reference section=0 on input line 124.
+Package biblatex Info: Reference segment=0 on input line 124.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1252,7 +1253,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count484
-Package hyperref Info: Link coloring OFF on input line 123.
+Package hyperref Info: Link coloring ON on input line 124.
  (c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1264,9 +1265,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count485
 )
-LaTeX Info: Redefining \ref on input line 123.
-LaTeX Info: Redefining \pageref on input line 123.
-LaTeX Info: Redefining \nameref on input line 123.
+LaTeX Info: Redefining \ref on input line 124.
+LaTeX Info: Redefining \pageref on input line 124.
+LaTeX Info: Redefining \nameref on input line 124.
 
 (./Intro-latex.out) (./Intro-latex.out)
 \@outlinefile=\write6
@@ -1307,12 +1308,12 @@ LaTeX Info: Redefining \nameref on input line 123.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 125
+LaTeX Font Info:    Trying to load font information for U+msa on input line 126
 .
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 125
+LaTeX Font Info:    Trying to load font information for U+msb on input line 126
 .
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1320,18 +1321,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<Images/latex_word.png, id=129, 471.7625pt x 409.53pt>
+<Images/latex_word.png, id=128, 471.7625pt x 409.53pt>
 File: Images/latex_word.png Graphic file (type png)
 <use Images/latex_word.png>
-Package pdftex.def Info: Images/latex_word.png  used on input line 146.
+Package pdftex.def Info: Images/latex_word.png  used on input line 147.
 (pdftex.def)             Requested size: 283.05968pt x 245.7199pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-48.
+49.
 
 (c:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (12.0pt too wide) in paragraph at lines 146--150
+Overfull \hbox (12.0pt too wide) in paragraph at lines 147--151
  [] 
  []
 
@@ -1340,13 +1341,13 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 146--150
 (./_minted-Intro-latex/default.pygstyle) [2 <./Images/latex_word.png>]
 (./_minted-Intro-latex/E8D0E104EA2D1BF2E7FC7FC0671346ED8D7E281EA22A83E6804448EB
 5C0EB921.pygtex)
-<Images/compilation.png, id=151, 423.83344pt x 404.26031pt>
+<Images/compilation.png, id=150, 423.83344pt x 404.26031pt>
 File: Images/compilation.png Graphic file (type png)
 <use Images/compilation.png>
-Package pdftex.def Info: Images/compilation.png  used on input line 178.
+Package pdftex.def Info: Images/compilation.png  used on input line 179.
 (pdftex.def)             Requested size: 254.302pt x 242.55806pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 178--182
+Overfull \hbox (12.0pt too wide) in paragraph at lines 179--183
  [] 
  []
 
@@ -1384,10 +1385,10 @@ A9A2B111.pygtex)
 
 (./_minted-Intro-latex/C87986A900EE1EE227C9A9B3B784ED3D8561A358ED0456EF4CC61F8A
 A9A2B111.pygtex)
-<Images/bourdieu.jpg, id=179, 501.875pt x 242.9075pt>
+<Images/bourdieu.jpg, id=178, 501.875pt x 242.9075pt>
 File: Images/bourdieu.jpg Graphic file (type jpg)
 <use Images/bourdieu.jpg>
-Package pdftex.def Info: Images/bourdieu.jpg  used on input line 330.
+Package pdftex.def Info: Images/bourdieu.jpg  used on input line 331.
 (pdftex.def)             Requested size: 200.74643pt x 97.16127pt.
  [6]
 \openout4 = `Intro-latex.pyg'.
@@ -1395,7 +1396,7 @@ Package pdftex.def Info: Images/bourdieu.jpg  used on input line 330.
 
 (./_minted-Intro-latex/A815D9EBB1B3A5DC2036EE84F6F95D008561A358ED0456EF4CC61F8A
 A9A2B111.pygtex)
-Overfull \hbox (6.64948pt too wide) in paragraph at lines 361--362
+Overfull \hbox (6.64948pt too wide) in paragraph at lines 362--363
 []\T1/cmtt/m/n/10.95 \usepackage[left=cm,right=cm,top=cm,bottom=cm]{geometry} \
 T1/cmr/m/n/10.95 : per-met de dé-fi-nir les marges. 
  []
@@ -1406,16 +1407,16 @@ T1/cmr/m/n/10.95 : per-met de dé-fi-nir les marges.
 
 (./_minted-Intro-latex/00075A687DE43B3F1BF591857FB4354D8561A358ED0456EF4CC61F8A
 A9A2B111.pygtex)
-<Images/Sweave.png, id=192, 257.96375pt x 400.49625pt>
+<Images/Sweave.png, id=191, 257.96375pt x 400.49625pt>
 File: Images/Sweave.png Graphic file (type png)
 <use Images/Sweave.png>
-Package pdftex.def Info: Images/Sweave.png  used on input line 410.
+Package pdftex.def Info: Images/Sweave.png  used on input line 411.
 (pdftex.def)             Requested size: 120.92421pt x 187.73827pt.
  [8]
-<Images/Options_Sweave.png, id=203, 585.18625pt x 582.175pt>
+<Images/Options_Sweave.png, id=202, 585.18625pt x 582.175pt>
 File: Images/Options_Sweave.png Graphic file (type png)
 <use Images/Options_Sweave.png>
-Package pdftex.def Info: Images/Options_Sweave.png  used on input line 417.
+Package pdftex.def Info: Images/Options_Sweave.png  used on input line 418.
 (pdftex.def)             Requested size: 193.47578pt x 192.48256pt.
 \openout4 = `Intro-latex.pyg'.
 
@@ -1442,11 +1443,11 @@ CE99541C.pygtex) [9 <./Images/Sweave.png> <./Images/Options_Sweave.png>]
 
 (./_minted-Intro-latex/44A3D6CE921C07B88DDF756E3B9A049C65708B81BDA12ED5D3D40A36
 91DA076D.pygtex) [11] [12]
-<Sorties/Graphunnamed-chunk-7-1.pdf, id=232, 505.89pt x 216.81pt>
+<Sorties/Graphunnamed-chunk-7-1.pdf, id=231, 505.89pt x 216.81pt>
 File: Sorties/Graphunnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use Sorties/Graphunnamed-chunk-7-1.pdf>
 Package pdftex.def Info: Sorties/Graphunnamed-chunk-7-1.pdf  used on input line
- 630.
+ 631.
 (pdftex.def)             Requested size: 483.69687pt x 207.30154pt.
  [13 <./Sorties/Graphunnamed-chunk-7-1.pdf>]
 (./Intro-latex.aux)
@@ -1459,10 +1460,10 @@ Package logreq Info: Writing requests to 'Intro-latex.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28011 strings out of 478276
- 496318 string characters out of 5850489
- 1252128 words of memory out of 5000000
- 45712 multiletter control sequences out of 15000+600000
+ 28013 strings out of 478276
+ 496351 string characters out of 5850489
+ 1252210 words of memory out of 5000000
+ 45714 multiletter control sequences out of 15000+600000
  503567 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,81p,1158b,1759s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1489,10 +1490,10 @@ pe1/public/cm-super/sfrm1200.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public
 /cm-super/sfrm1728.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/
 sfti1095.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt0800.p
 fb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on Intro-latex.pdf (13 pages, 581451 bytes).
+Output written on Intro-latex.pdf (13 pages, 574095 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 308 compressed objects within 4 object streams
+ 386 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
  74 named destinations out of 1000 (max. 500000)
  247 words of extra memory for PDF output out of 10000 (max. 10000000)
 

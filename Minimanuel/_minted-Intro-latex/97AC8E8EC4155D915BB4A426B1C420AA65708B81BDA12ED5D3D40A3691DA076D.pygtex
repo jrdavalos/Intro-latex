@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZbs{}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{document}\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{\PYGZsh{} \PYGZlt{}\PYGZlt{}setup, eval= TRUE, include= FALSE, cache= FALSE, echo= FALSE\PYGZgt{}\PYGZgt{}=}
+\PYG{n+nf}{system }\PYG{p}{(}\PYG{n+nf}{paste }\PYG{p}{(}\PYG{l+s}{\PYGZdq{}biber\PYGZdq{}}\PYG{p}{,} \PYG{n+nf}{sub }\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZbs{}\PYGZbs{}.Rnw\PYGZdl{}\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n+nf}{current\PYGZus{}input}\PYG{p}{())))}
+\PYG{o}{@}
+\end{Verbatim}

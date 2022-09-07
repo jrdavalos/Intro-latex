@@ -84,7 +84,7 @@
 
 
 % mise en page
-\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, menucolor=black]{hyperref} % liens hypertextes
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=gray, menucolor=black]{hyperref} % liens hypertextes
 \usepackage[bottom]{footmisc} % mise en forme des notes de bas de page "\footnote"
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % marges
 \setcounter{tocdepth}{2}
@@ -177,6 +177,7 @@ Je cite la figure \ref{bourdieu}
 \textbf{gras}
 
 
+
 \cite{Rouquette2011}\footcite{Rouquette2011}
 \nocite{Rouquette2011}
 \nocite{*}
@@ -197,10 +198,10 @@ Je cite la figure \ref{bourdieu}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ##          n    % val%
-## cerise 109 10.9 10.9
-## fraise 509 50.9 50.9
-## mangue 206 20.6 20.6
-## orange 176 17.6 17.6
+## cerise 103 10.3 10.3
+## fraise 516 51.6 51.6
+## mangue 191 19.1 19.1
+## orange 190 19.0 19.0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -215,10 +216,10 @@ Je cite la figure \ref{bourdieu}
 \toprule
   & n & \% & val\%\\
 \midrule
-cerise & 102 & 10.2 & 10.2\\
-fraise & 496 & 49.6 & 49.6\\
-mangue & 211 & 21.1 & 21.1\\
-orange & 191 & 19.1 & 19.1\\
+cerise & 103 & 10.3 & 10.3\\
+fraise & 516 & 51.6 & 51.6\\
+mangue & 191 & 19.1 & 19.1\\
+orange & 190 & 19.0 & 19.0\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -228,7 +229,7 @@ orange & 191 & 19.1 & 19.1\\
 
 
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: mer., sept. 07, 2022 - 15:37:30
+% Date and time: mer., sept. 07, 2022 - 17:15:46
 \begin{table}[!htbp] \centering 
   \caption{Trois beaux modèles} 
   \label{} 
@@ -241,29 +242,29 @@ orange & 191 & 19.1 & 19.1\\
 \\[-1.8ex] & \textit{logistic} & \textit{logistic} & \textit{OLS} \\ 
 \\[-1.8ex] & (1) & (2) & (3)\\ 
 \hline \\[-1.8ex] 
- age & $-$0.002 & 0.002 & 0.027$^{***}$ \\ 
+ age & 0.003 & $-$0.0003 & 0.031$^{***}$ \\ 
   & (0.002) & (0.004) & (0.001) \\ 
   & & & \\ 
- aime\_kiwiOui & $-$0.207 & 0.294 & 0.966$^{***}$ \\ 
-  & (0.164) & (0.253) & (0.082) \\ 
+ aime\_kiwiOui & $-$0.059 & $-$0.231 & 0.948$^{***}$ \\ 
+  & (0.161) & (0.280) & (0.085) \\ 
   & & & \\ 
- aime\_melonOui & $-$0.124 & 0.099 & 1.015$^{***}$ \\ 
-  & (0.127) & (0.210) & (0.064) \\ 
+ aime\_melonOui & $-$0.103 & 0.256 & 1.062$^{***}$ \\ 
+  & (0.127) & (0.210) & (0.067) \\ 
   & & & \\ 
- aime\_ananasOui & $-$0.070 & $-$0.017 & 1.087$^{***}$ \\ 
-  & (0.138) & (0.227) & (0.069) \\ 
+ aime\_ananasOui & $-$0.137 & 0.613$^{**}$ & 1.048$^{***}$ \\ 
+  & (0.136) & (0.251) & (0.072) \\ 
   & & & \\ 
- Constant & 0.217 & $-$2.364$^{***}$ & 2.249$^{***}$ \\ 
-  & (0.177) & (0.296) & (0.089) \\ 
+ Constant & 0.067 & $-$2.686$^{***}$ & 1.972$^{***}$ \\ 
+  & (0.175) & (0.316) & (0.092) \\ 
   & & & \\ 
 \hline \\[-1.8ex] 
 Observations & 1,000 & 1,000 & 1,000 \\ 
-R$^{2}$ &  &  & 0.554 \\ 
-Adjusted R$^{2}$ &  &  & 0.552 \\ 
-Log Likelihood & $-$691.415 & $-$328.569 &  \\ 
-Akaike Inf. Crit. & 1,392.830 & 667.138 &  \\ 
-Residual Std. Error &  &  & 1.007 (df = 995) \\ 
-F Statistic &  &  & 308.916$^{***}$ (df = 4; 995) \\ 
+R$^{2}$ &  &  & 0.557 \\ 
+Adjusted R$^{2}$ &  &  & 0.555 \\ 
+Log Likelihood & $-$690.594 & $-$327.360 &  \\ 
+Akaike Inf. Crit. & 1,391.188 & 664.720 &  \\ 
+Residual Std. Error &  &  & 1.056 (df = 995) \\ 
+F Statistic &  &  & 312.946$^{***}$ (df = 4; 995) \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 

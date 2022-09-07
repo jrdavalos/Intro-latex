@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{} Les commentaires sont indiques par un pourcentage}
+\PYG{c}{\PYGZpc{} On se trouve ici dans le preambule}
+\PYG{k}{\PYGZbs{}documentclass}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}} \PYG{c}{\PYGZpc{} la classe de document est obligatoire, elle permet à LaTeX de charger des styles par defaut. Ici j\PYGZsq{}ai choisi article mais cela peut etre report, memoir, book, letter, ou bien d\PYGZsq{}autres}
+\PYG{c}{\PYGZpc{} On peut aussi creer sa propre classe}
+
+\PYG{k}{\PYGZbs{}usepackage}\PYG{n+nb}{\PYGZob{}}package1\PYG{n+nb}{\PYGZcb{}} \PYG{c}{\PYGZpc{} J\PYGZsq{}appelle ici package1, on verra plus tard lesquels peuvent nous être utiles}
+
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\PYG{c}{\PYGZpc{} Ici on ne se trouve plus dans le preambule. L\PYGZsq{}ensemble de ce qui apparait dans le PDF se trouve la.}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}document\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

@@ -34,7 +34,7 @@
 
 
 % mise en page
-\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, menucolor=black]{hyperref} % liens hypertextes
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=gray, menucolor=black]{hyperref} % liens hypertextes
 \usepackage[bottom]{footmisc} % mise en forme des notes de bas de page "\footnote"
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % marges
 \setcounter{tocdepth}{2}

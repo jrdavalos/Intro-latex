@@ -38,13 +38,14 @@
 \usepackage{csquotes}% typo française (guillermets)
 
 % mise en page
-\usepackage{hyperref} % liens hypertextes
+\usepackage[colorlinks = true, linkcolor = gray, urlcolor = blue,
+            citecolor = blue, anchorcolor = blue]{hyperref} % liens hypertextes
 \usepackage[bottom]{footmisc} % mise en forme des notes de bas de page "\footnote"
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % marges
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % marges
 
 % page de garde/titre (en fonction de la classe de document)
 \usepackage{titling} % pour le titre en gras
-\author{\href{mailto:julioricardo.davalos@ehess.fr}{Julio Ricardo Davalos}}
+\author{Julio Ricardo Davalos}
 \title{Petite introduction à \LaTeX{} en Sciences Sociales}
 \date{Septembre 2022}
 

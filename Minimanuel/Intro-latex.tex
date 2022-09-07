@@ -88,13 +88,14 @@
 \usepackage{csquotes}% typo française (guillermets)
 
 % mise en page
-\usepackage{hyperref} % liens hypertextes
+\usepackage[colorlinks = true, linkcolor = gray, urlcolor = blue,
+            citecolor = blue, anchorcolor = blue]{hyperref} % liens hypertextes
 \usepackage[bottom]{footmisc} % mise en forme des notes de bas de page "\footnote"
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % marges
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % marges
 
 % page de garde/titre (en fonction de la classe de document)
 \usepackage{titling} % pour le titre en gras
-\author{\href{mailto:julioricardo.davalos@ehess.fr}{Julio Ricardo Davalos}}
+\author{Julio Ricardo Davalos}
 \title{Petite introduction à \LaTeX{} en Sciences Sociales}
 \date{Septembre 2022}
 
@@ -489,10 +490,10 @@ freq(data$choix)
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ##          n    % val%
-## cerise  25  8.3  8.3
-## fraise 158 52.7 52.7
-## mangue  49 16.3 16.3
-## orange  68 22.7 22.7
+## cerise  95  9.5  9.5
+## fraise 477 47.7 47.7
+## mangue 188 18.8 18.8
+## orange 240 24.0 24.0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -521,10 +522,10 @@ freq(data$choix) %>%
 \toprule
   & n & \% & val\%\\
 \midrule
-cerise & 25 & 8.3 & 8.3\\
-fraise & 158 & 52.7 & 52.7\\
-mangue & 49 & 16.3 & 16.3\\
-orange & 68 & 22.7 & 22.7\\
+cerise & 95 & 9.5 & 9.5\\
+fraise & 477 & 47.7 & 47.7\\
+mangue & 188 & 18.8 & 18.8\\
+orange & 240 & 24.0 & 24.0\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -559,7 +560,7 @@ Pour le cas des tableaux de régression, un package dédié et très connu a ét
 \end{alltt}
 \end{kframe}
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% Date and time: mar., sept. 06, 2022 - 23:36:15
+% Date and time: mer., sept. 07, 2022 - 16:56:21
 \begin{table}[!htbp] \centering 
   \caption{Trois beaux modèles} 
   \label{} 
@@ -572,29 +573,29 @@ Pour le cas des tableaux de régression, un package dédié et très connu a ét
 \\[-1.8ex] & \textit{logistic} & \textit{logistic} & \textit{OLS} \\ 
 \\[-1.8ex] & (1) & (2) & (3)\\ 
 \hline \\[-1.8ex] 
- age & $-$0.004 & 0.011$^{***}$ & 0.027$^{***}$ \\ 
+ age & $-$0.001 & $-$0.001 & 0.028$^{***}$ \\ 
   & (0.002) & (0.004) & (0.001) \\ 
   & & & \\ 
- aime\_kiwiOui & 0.037 & $-$0.358 & 0.978$^{***}$ \\ 
-  & (0.157) & (0.297) & (0.083) \\ 
+ aime\_kiwiOui & $-$0.157 & 0.205 & 1.040$^{***}$ \\ 
+  & (0.154) & (0.250) & (0.081) \\ 
   & & & \\ 
- aime\_melonOui & $-$0.081 & $-$0.011 & 0.947$^{***}$ \\ 
-  & (0.127) & (0.222) & (0.067) \\ 
+ aime\_melonOui & 0.064 & 0.199 & 1.071$^{***}$ \\ 
+  & (0.127) & (0.217) & (0.067) \\ 
   & & & \\ 
- aime\_ananasOui & 0.004 & $-$0.088 & 0.955$^{***}$ \\ 
-  & (0.137) & (0.234) & (0.072) \\ 
+ aime\_ananasOui & 0.163 & $-$0.217 & 0.895$^{***}$ \\ 
+  & (0.138) & (0.228) & (0.073) \\ 
   & & & \\ 
- Constant & 0.191 & $-$2.791$^{***}$ & 2.333$^{***}$ \\ 
-  & (0.178) & (0.327) & (0.094) \\ 
+ Constant & $-$0.179 & $-$2.221$^{***}$ & 2.295$^{***}$ \\ 
+  & (0.177) & (0.296) & (0.094) \\ 
   & & & \\ 
 \hline \\[-1.8ex] 
 Observations & 1,000 & 1,000 & 1,000 \\ 
-R$^{2}$ &  &  & 0.524 \\ 
-Adjusted R$^{2}$ &  &  & 0.522 \\ 
-Log Likelihood & $-$691.623 & $-$302.110 &  \\ 
-Akaike Inf. Crit. & 1,393.246 & 614.221 &  \\ 
-Residual Std. Error &  &  & 1.057 (df = 995) \\ 
-F Statistic &  &  & 273.853$^{***}$ (df = 4; 995) \\ 
+R$^{2}$ &  &  & 0.533 \\ 
+Adjusted R$^{2}$ &  &  & 0.532 \\ 
+Log Likelihood & $-$690.745 & $-$312.728 &  \\ 
+Akaike Inf. Crit. & 1,391.490 & 635.456 &  \\ 
+Residual Std. Error &  &  & 1.063 (df = 995) \\ 
+F Statistic &  &  & 284.464$^{***}$ (df = 4; 995) \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 

@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} \PYGZlt{}\PYGZlt{}result=\PYGZdq{}asis\PYGZdq{}\PYGZgt{}\PYGZgt{}=}
+\PYG{c+c1}{\PYGZsh{} result=\PYGZdq{}asis\PYGZdq{} permet de dire à Sweave que le Chunk va contenir du texte}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{kableExtra}\PYG{p}{)}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{tidyverse}\PYG{p}{)}
+\PYG{n+nf}{freq}\PYG{p}{(}\PYG{n}{data}\PYG{o}{\PYGZdl{}}\PYG{n}{choix}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}
+ \PYG{n+nf}{kable}\PYG{p}{(}\PYG{n}{format} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}latex\PYGZdq{}}\PYG{p}{,} \PYG{c+c1}{\PYGZsh{} sinon c\PYGZsq{}est en html}
+       \PYG{n}{caption} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Fréquence des choix\PYGZdq{}}\PYG{p}{,}
+       \PYG{n}{label} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}freqchoix\PYGZdq{}}\PYG{p}{,}
+       \PYG{n}{booktabs} \PYG{o}{=} \PYG{k+kc}{TRUE}\PYG{p}{)} \PYG{o}{\PYGZpc{}\PYGZgt{}\PYGZpc{}}  \PYG{c+c1}{\PYGZsh{} permet d\PYGZsq{}avoir des tableaux plus jolis, necessite le package booktabs dans le preambule}
+    \PYG{n+nf}{kable\PYGZus{}styling}\PYG{p}{(}\PYG{n}{latex\PYGZus{}options} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}hold\PYGZus{}position\PYGZdq{}}\PYG{p}{),} \PYG{c+c1}{\PYGZsh{} cree un float et lui donne l\PYGZsq{}argument \PYGZsq{}h\PYGZsq{}}
+                  \PYG{n}{position} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}center\PYGZdq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} centre le tableau}
+\PYG{o}{@}
+\end{Verbatim}

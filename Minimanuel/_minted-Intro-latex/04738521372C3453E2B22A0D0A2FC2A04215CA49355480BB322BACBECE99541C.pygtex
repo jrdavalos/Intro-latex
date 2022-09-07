@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZsh{} \PYGZlt{}\PYGZlt{}\PYGZgt{}\PYGZgt{}=
+print(\PYGZdq{}une commande R\PYGZdq{})
+@
+\end{Verbatim}
