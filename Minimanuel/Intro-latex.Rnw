@@ -65,7 +65,6 @@
     $\ast$\\ $\ast$~\hspace*{2mm}~$\ast$\\
   \end{center}
 }
-\newcommand{\nomfonction}[2][]{\texttt{\textbackslash#2\{#1\}}}
 
 %-------------------------------Options pour Sweave--------------------------------
 <<include=FALSE>>=
@@ -166,13 +165,13 @@ Comme mentionné plus haut, j'ai utilisé ici la classe de documents \texttt{art
   \centering
   \begin{tabular}{|l|l|c|}
   \hline Commande & Sens & Niveau\\
-  \hline \nomfonction{part} & Partie & $-1$\\
-  \nomfonction{chapter} & Chapitre & $0$\\
-  \nomfonction{section} & Section & $1$\\
-  \nomfonction{subsection} & Sous-section & $2$\\
-  \nomfonction{subsubsection} & Sous-sous-section & $3$\\
-  \nomfonction{paragraph} & Paragraphe & $4$\\
-  \nomfonction{subparagraph} & Sous-paragraphe & $5$\\
+  \hline \mintinline{latex}{\part{}} & Partie & $-1$\\
+  \mintinline{latex}{\chapter{}} & Chapitre & $0$\\
+  \mintinline{latex}{\section{}} & Section & $1$\\
+  \mintinline{latex}{\subsection{}} & Sous-section & $2$\\
+  \mintinline{latex}{\subsubsection{}} & Sous-sous-section & $3$\\
+  \mintinline{latex}{\paragraph{}} & Paragraphe & $4$\\
+  \mintinline{latex}{\subparagraph{}} & Sous-paragraphe & $5$\\
   \hline
   \end{tabular}
 \end{table}
@@ -266,7 +265,7 @@ Ce code donne:
 
 Les arguments de base de \texttt{tabular} permettent de sélectionner le nombre de colonnes, leur alignement (\texttt{c}, \texttt{l} et \texttt{r}) et l'apparition des bordures par le symbole |. Les lignes de séparation des colonnes ne sont pas obligatoires, ainsi, on peut supprimer la ligne du milieu en indiquant \texttt{|cc|}. On peut construire autant de lignes et de colonnes que l'on veut, faire autant de \texttt{tabular} dans un \texttt{table} que l'on veut.
 
-Evidemment cela est un peu fastidieux à écrire, mais beaucoup d'éditeurs existent, par exemple \href{https://www.latex-tables.com/}{ici}, mais aussi dans l'éditeur \TeX maker qui est plutôt pratique bien que moins adapté à R. Pour fusionner des cases, il faudra faire appel à la fonction \nomfonction{multicolumn} et \nomfonction{multirow} (cette dernière, vient du package du même nom).
+Evidemment cela est un peu fastidieux à écrire, mais beaucoup d'éditeurs existent, par exemple \href{https://www.latex-tables.com/}{ici}, mais aussi dans l'éditeur \TeX maker qui est plutôt pratique bien que moins adapté à R. Pour fusionner des cases, il faudra faire appel à la fonction \mintinline{latex}{\multicolumn{nombre de colonnes}{alignement et bordures}{texte}} et \mintinline{latex}{\multirow{nombre de lignes}{taille ou *}{texte}} (cette dernière, vient du package du même nom).
 
 \subsubsection{Environnement \texttt{figure}}
 Cet environnement est également essentiel car il permet d'ajouter des images, qu'elles soient en PDF ou en format image, voire produite par votre document, on le verra ensuite. Il nécessite le package \texttt{graphicx}.
@@ -312,12 +311,12 @@ On peut modifier les types de tirets ponctuellement en ajoutant ce que l'on veut
 \subsubsection{Packages d'encoding et de typographie}
 Les packages permettant d'écrire en français avec les bons accents et la typographie standard sont les suivants:
 \begin{itemize}
-\item \nomfonction[inputenc]{usepackage[utf8]}: permet à \LaTeX{} de comprendre l'encodage d'entrée, notamment pour les accents.
-\item \nomfonction[babel]{usepackage[french]}: permet d'avoir les typographies françaises.
-\item \nomfonction[fontenc]{usepackage[T1]}: permet d'encoder le PDF de sortie en T1.
-\item \nomfonction[hyperref]{usepackage}: permet de créer des liens hyper-textes.
-\item \nomfonction[geometry]{usepackage[left=cm,right=cm,top=cm,bottom=cm]}: permet de définir les marges.
-\item \nomfonction[tabularx]{usepackage}: variante de \texttt{tabular} avec plus d'options.
+\item \mintinline{latex}{\usepackage[utf8]{inputenc}}: permet à \LaTeX{} de comprendre l'encodage d'entrée, notamment pour les accents.
+\item \mintinline{latex}{\usepackage[french]{babel}}: permet d'avoir les typographies françaises.
+\item \mintinline{latex}{\usepackage[T1]{fontenc}}: permet d'encoder le PDF de sortie en T1.
+\item \mintinline{latex}{\usepackage{hyperref}}: permet de créer des liens hyper-textes.
+\item \mintinline{latex}{\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry]}}: permet de définir les marges (ici de 2 cm).
+\item \mintinline{latex}{\usepackage{tabularx}}: variante de \texttt{tabular} avec plus d'options.
 \end{itemize}
 
 \subsection{Corps du texte} 
@@ -329,16 +328,16 @@ Nous avons vu plus haut les commande pour la structuration des titres. Concernan
 \item Un espace \emph{après} un signe de ponctuation est obligatoire, mais \LaTeX{} comprend qu'il faut en faire un \emph{avant} et l'insèreun espace si besoin. Par ailleurs, il vaut mieux ne pas séparer la ponctuation du mot précédent, sans quoi \LaTeX{} risque de faire apparaître le signe sur la ligne suivante si le mot était le dernier de la ligne.
 \item quatre caractères spéciaux ne s'obtiennent pas avec \textbackslash[mon caractère spécial]:
   \begin{enumerate}
-  \item \textbackslash{} : qui s'insère avec \texttt{textbackslash};
-  \item \textasciitilde{} : qui s'insère avec \texttt{textasciitilde};
-  \item \textasciicircum{} : qui s'insère avec \texttt{textasciicircum}.
+  \item \textbackslash{} : qui s'insère avec \mintinline{latex}{\textbackslash};
+  \item \textasciitilde{} : qui s'insère avec \mintinline{latex}{\textasciitilde};
+  \item \textasciicircum{} : qui s'insère avec \mintinline{latex}{\textasciicircum}.
   \end{enumerate}
-\item Les guillemets s'insèrent avec \nomfonction[mon texte]{enquote}.
-\item L'italique s'obtient en insérant: \nomfonction[mon texte]{textit}.
-\item Le gras s'obtient en insérant: \nomfonction[mon texte]{textbf}.
+\item Les guillemets s'insèrent avec \mintinline{latex}{\enquote{mon texte}}.
+\item L'italique s'obtient en insérant: \mintinline{latex}{\textit{mon texte}}.
+\item Le gras s'obtient en insérant: \mintinline{latex}{\textbf{mon texte}}.
 \end{itemize}
 
-Enfin, dans le corps du texte on trouvera des liens hypertextes que l'on marque avec \nomfonction[mon label]{label} dans l'environnement auquel appartient le label puis que le pointe avec \nomfonction[mon label]{ref}.
+Enfin, dans le corps du texte on trouvera des liens hypertextes que l'on marque avec \mintinline{latex}{\label{mon label}} dans l'environnement auquel appartient le label puis que le pointe avec \mintinline{latex}{\ref{mon label}}.
 
 
 \subsection{Bibliographie}
@@ -368,7 +367,7 @@ RSweave est inclu dans Rstudio. On le trouve comme sur l'image qui suit:
 	\includegraphics[width=0.25\textwidth]{Images/Sweave.png}
 	\end{center}
 \end{figure}
-\newpage
+
 Pour obtenir la version de Sweave la plus efficace et la plus documentée, il faut cependant sélection \texttt{knitr} (qui vient de Markdown), dans les paramètres. De même, comme vous avez installé \LaTeX{}, vous pouvez sélectionner pdf\LaTeX{} et oublier \texttt{tinytex} qui est une version légère de \LaTeX{}.
 \begin{figure}[!ht]
 	\begin{center}
@@ -399,6 +398,8 @@ Les chunks doivent comprendre toutes les commandes du code R dont on a besoin, y
 \item \texttt{label=}: permet de donner un nom à la figure afin de potentiellement y faire appel plus tard.
 \item \texttt{fig.width=} et \texttt{fig.height=}: permet de donner une taille à la sortie s'il s'agit d'une image (par exemple un graphique).
 \end{itemize}
+
+Pour plus d'options dans les chunk: \url{https://yihui.org/knitr/options/#chunk-options}.
 
 \subsubsection{Le hic: la bibliographie}
 Il devait bien y avoir un hic dans cette histoire. Il s'agit de l'importation de la bibliographie. RStudio ne permet pas de lier \texttt{biber} à notre fichier de manière automatique. Cela implique qu'en théorie, on ne peut pas mettre de bibliographie dans un fichier Rsweave compilé depuis Rstudio. Deux solutions existent pour ce problème:
@@ -530,7 +531,6 @@ data %>%
  geom_smooth(method='lm')
 @
 
-Pour plus d'options dans les chunk: \url{https://yihui.org/knitr/options/#chunk-options}.
 
 \nocite{*}
 \printbibliography

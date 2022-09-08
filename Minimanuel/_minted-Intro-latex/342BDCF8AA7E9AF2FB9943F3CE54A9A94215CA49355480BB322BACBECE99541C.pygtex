@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}multirow}\PYG{n+nb}{\PYGZob{}}nombre de lignes\PYG{n+nb}{\PYGZcb{}\PYGZob{}}taille ou *\PYG{n+nb}{\PYGZcb{}\PYGZob{}}texte\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

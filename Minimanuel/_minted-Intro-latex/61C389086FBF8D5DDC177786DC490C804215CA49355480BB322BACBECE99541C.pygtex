@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}multicolumn}\PYG{n+nb}{\PYGZob{}}nombre de colonnes\PYG{n+nb}{\PYGZcb{}\PYGZob{}}alignement et bordures\PYG{n+nb}{\PYGZcb{}\PYGZob{}}texte\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}
