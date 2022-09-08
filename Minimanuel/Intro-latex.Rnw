@@ -314,6 +314,10 @@ Les packages permettant d'écrire en français avec les bons accents et la typog
 \item \mintinline{latex}{\usepackage[utf8]{inputenc}}: permet à \LaTeX{} de comprendre l'encodage d'entrée, notamment pour les accents.
 \item \mintinline{latex}{\usepackage[french]{babel}}: permet d'avoir les typographies françaises.
 \item \mintinline{latex}{\usepackage[T1]{fontenc}}: permet d'encoder le PDF de sortie en T1.
+\end{itemize}
+
+J'ajoute quelques packages importants à connaitre:
+\begin{itemize}
 \item \mintinline{latex}{\usepackage{hyperref}}: permet de créer des liens hyper-textes.
 \item \mintinline{latex}{\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry]}}: permet de définir les marges (ici de 2 cm).
 \item \mintinline{latex}{\usepackage{tabularx}}: variante de \texttt{tabular} avec plus d'options.
@@ -325,7 +329,7 @@ Nous avons vu plus haut les commande pour la structuration des titres. Concernan
 \item Plusieurs espaces à la suite produisent une seule espace.
 \item Une ligne vide produit un changement de paragraphe. Plusieurs lignes vides produisent le même effet. Pour redémarrer avec l'indentation, on termine un paragraphe avec \textbackslash{}\textbackslash{}. Mais cette manière de faire n'est pas très propre, le mieux est de préciser dans le préambule quelle indentation on veut et quel espace entre les paragraphes on souhaite. Dans ce document j'ai simplement appelé le package \texttt{parskip} qui convient en version par défaut.
 \item Un retour à la ligne est compris comme une espace.
-\item Un espace \emph{après} un signe de ponctuation est obligatoire, mais \LaTeX{} comprend qu'il faut en faire un \emph{avant} et l'insèreun espace si besoin. Par ailleurs, il vaut mieux ne pas séparer la ponctuation du mot précédent, sans quoi \LaTeX{} risque de faire apparaître le signe sur la ligne suivante si le mot était le dernier de la ligne.
+\item Un espace \emph{après} un signe de ponctuation est obligatoire, mais \LaTeX{} comprend qu'il faut en faire un \emph{avant} et l'insère un espace si besoin. Par ailleurs, il vaut mieux ne pas séparer la ponctuation du mot précédent, sans quoi \LaTeX{} risque de faire apparaître le signe sur la ligne suivante si le mot était le dernier de la ligne.
 \item quatre caractères spéciaux ne s'obtiennent pas avec \textbackslash[mon caractère spécial]:
   \begin{enumerate}
   \item \textbackslash{} : qui s'insère avec \mintinline{latex}{\textbackslash};
